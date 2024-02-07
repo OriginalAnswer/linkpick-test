@@ -1,0 +1,40 @@
+
+            .notice-container
+                .notice-warpper
+                    notice notice-1
+                        span
+.view
+    .layout min-height: 100vh;
+                header 
+                    .header-l
+                        img
+                        span
+                    .header-r
+                        .header-icon
+        .profile
+            .profile-img-container
+                .profile-img
+            .profile-name-container
+                .profile-name
+            .textitem
+                .textitem-l
+                .textitem-c .textitem-text
+                .textitem-r
+        .search
+            label.search-icon
+            input#input-search
+        .item-container
+            a.item
+                .item-l
+                    img
+                .item-r
+                    .tag-container
+                        .tag
+                    .item-name
+        footer
+            .dashline
+            .textitem
+                .textitem-l
+                .textitem-c .textitem-text
+                .textitem-r
+            .dashline
