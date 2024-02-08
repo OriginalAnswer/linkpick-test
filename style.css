@@ -373,6 +373,9 @@ footer .textitem{
     color: #fff;
     scale: 1.05;
 }
+.tag-coupang{background-color: rgb(68, 152, 255); color:#fff;}
+.tag-ali{background-color: rgb(255, 110, 13); color:#fff;}
+.tag-rocket{background-color: rgb(0, 115, 255); color:#fff;}
 /* ============================= */
 .notice-warpper{
     position: fixed;
