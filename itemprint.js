@@ -7,6 +7,17 @@ const itemDB = [
     {num : "003", title : "원형 샤워커튼 샤워부스", img : "./img/thumb/003.jpg",link : "https://link.coupang.com/a/bps53dge", tag1:"완벽차단" , tag2:"샤워커튼" , tag0:"로켓"},
     {num : "004", title : "북라이트 무드등", img : "./img/thumb/004.jpg",link : "https://link.coupang.com/a/bps53dg", tag1:"펼치면" , tag2:"은은해지는" , tag0:"쿠팡"},
     {num : "005", title : "페달식 도어스토퍼", img : "./img/thumb/005.jpg",link : "https://link.coupang.com/a/bps53df", tag1:"손대신" , tag2:"발로" , tag0:"쿠팡"},
+    {num : "", title : "", img : "./img/thumb/",link : "", tag1:"" , tag2:"" , tag0:""},
+    {num : "", title : "", img : "./img/thumb/",link : "", tag1:"" , tag2:"" , tag0:""},
+    {num : "", title : "", img : "./img/thumb/",link : "", tag1:"" , tag2:"" , tag0:""},
+    {num : "", title : "", img : "./img/thumb/",link : "", tag1:"" , tag2:"" , tag0:""},
+    {num : "", title : "", img : "./img/thumb/",link : "", tag1:"" , tag2:"" , tag0:""},
+    {num : "", title : "", img : "./img/thumb/",link : "", tag1:"" , tag2:"" , tag0:""},
+    {num : "", title : "", img : "./img/thumb/",link : "", tag1:"" , tag2:"" , tag0:""},
+    {num : "", title : "", img : "./img/thumb/",link : "", tag1:"" , tag2:"" , tag0:""},
+    {num : "", title : "", img : "./img/thumb/",link : "", tag1:"" , tag2:"" , tag0:""},
+    {num : "", title : "", img : "./img/thumb/",link : "", tag1:"" , tag2:"" , tag0:""},
+
 ]
 // itemDB의 각 항목을 HTML 형식에 맞게 itemContainer에 추가합니다.
 itemDB.forEach(item => {
@@ -42,6 +53,9 @@ itemDB.forEach(item => {
                     // tag2의 배경색을 랜덤으로 지정합니다.
                     const randomColor = getRandomColor();
                     tagElement.style.backgroundColor = randomColor;
+                    // 배경색에 따라 글자색을 조정합니다.
+                    const textColor = getTextColor(randomColor);
+                    tagElement.style.color = textColor;
                 }
                 if (tag === "쿠팡") {
                     tagElement.classList.add('tag-coupang');
@@ -76,10 +90,21 @@ function getRandomColor() {
     for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
     }
-    color = color + "75";
+    color = color + 'a1';
     return color;
 }
-
+// 배경색에 따라 글자색을 조정하는 함수
+function getTextColor(bgColor) {
+    // 배경색을 rgba에서 RGB로 변환합니다.
+    let rgbColor = bgColor.substring(0, 7); // alpha 값 제거
+    const r = parseInt(rgbColor.substring(1, 3), 16);
+    const g = parseInt(rgbColor.substring(3, 5), 16);
+    const b = parseInt(rgbColor.substring(5, 7), 16);
+    // 밝기 계산
+    const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+    // 밝기에 따라 글자색 결정
+    return brightness > 125 ? '#000000' : '#ffffff';
+}
 
 {/* <a href="https://s.click.aliexpress.com/e/_DmgVial" class="item box-type-3">
     <div class="item-l">
